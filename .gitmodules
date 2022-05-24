@@ -1,0 +1,3 @@
+[submodule "lab5/stb"]
+	path = lab5/stb
+	url = git@github.com:nothings/stb.git
