@@ -1,3 +1,4 @@
+// В40
 // uns 32a, 8b, 16c, 32d, 32e
 // b*c + a/(d+e) - d*d/(b*e) + a*e
     .arch   armv8-a
