@@ -20,11 +20,12 @@ end1:
 	.align   2
 	.type    enGrey, %function
 enGrey:
-    sub       sp, sp, #64
+    sub       sp, sp, #80
     stp     x22, x23, [sp]
     stp     x24, x25, [sp, #16]
     stp     x26, x27, [sp, #32]
     stp     x28, x29, [sp, #48]
+    stp     x19, x20, [sp, #64]
 
 
 	mov	     x19, x0   // buf
@@ -69,6 +70,7 @@ end:
     ldp     x24, x25, [sp, #16]
     ldp     x26, x27, [sp, #32]
     ldp     x28, x29, [sp, #48]
-    add     sp, sp, #64
+    ldp     x19, x20, [sp, #64]
+    add     sp, sp, #80
 	ret
 	.size enGrey, .-enGrey
