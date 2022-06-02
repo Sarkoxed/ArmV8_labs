@@ -20,6 +20,13 @@ end1:
 	.align   2
 	.type    enGrey, %function
 enGrey:
+    sub       sp, sp, #64
+    stp     x22, x23, [sp]
+    stp     x24, x25, [sp, #16]
+    stp     x26, x27, [sp, #32]
+    stp     x28, x29, [sp, #48]
+
+
 	mov	     x19, x0   // buf
 	mov	     x20, x1    // width
 	mov      x21, x2    //height
@@ -57,5 +64,11 @@ maxcont:
 	cmp	     x27, x21
 	blt	     enGreyIterY
 	mov	     x0, x19
+end:
+    ldp     x22, x23, [sp]
+    ldp     x24, x25, [sp, #16]
+    ldp     x26, x27, [sp, #32]
+    ldp     x28, x29, [sp, #48]
+    add     sp, sp, #64
 	ret
 	.size enGrey, .-enGrey
