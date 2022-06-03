@@ -68,7 +68,7 @@ int main(int argc, char** argv){
 	close(fd);
 	unsigned char* inputData = stbi_load(input, &width, &height, &channels, 0);
 
-	if (!input){
+	if (!inputData){
 		fprintf(stderr, "Couldn't load the image\n");
 		exit(-1);
 	}
